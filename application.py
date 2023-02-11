@@ -4,7 +4,8 @@ import requests
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 
-app = Flask(__name__)
+application = Flask(__name__) # initializing a flask app
+app=application
 
 @app.route('/',methods=['GET'])  # route to display the home page
 @cross_origin()
@@ -79,5 +80,5 @@ def index():
         return render_template('index.html')
 
 if __name__ == "__main__":
-    #app.run(host='127.0.0.1', port=8001, debug=True)
-	app.run(debug=True)
+    app.run(host='127.0.0.1', port=8000, debug=True)
+	#app.run(debug=True)
